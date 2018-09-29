@@ -16,7 +16,7 @@ export default () => {
       <div className='collapse navbar-collapse' id='navbarResponsive'>
         <ul className='navbar-nav navbar-sidenav' id='exampleAccordion'>
           <li className='nav-item' data-toggle='tooltip' data-placement='right' title='Configure'>
-            <NavLink to='/clients/createQuiz' className='nav-link'>
+            <NavLink to='/createQuiz' className='nav-link'>
               <i className='fa fa-fw fa-edit'></i>
               <span className='nav-link-text'>Create new Quiz</span>
             </NavLink>
@@ -29,7 +29,7 @@ export default () => {
             </a>
           </li>
           <li className='nav-item' data-toggle='tooltip' data-placement='right' title='Pick'>
-            <NavLink exact to='/clients/pickQuiz' className='nav-link'>
+            <NavLink exact to='/pickQuiz' className='nav-link'>
               <i className='fa fa-fw fa-check'></i>
               <span className='nav-link-text'>Pick A quiz</span>
             </NavLink>
