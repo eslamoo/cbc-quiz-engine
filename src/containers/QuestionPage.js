@@ -3,12 +3,7 @@ import { connect } from "react-redux";
 import { newRound, answerQuestion } from "../actions/index";
 import { bindActionCreators } from "redux";
 
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+
 
 function mapStateToProps(state) {
   return {
@@ -29,7 +24,7 @@ function mapDispatchToProps(dispatch) {
 class QuestionPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectionMade: false, coords: {} };
+    this.state = { selectionMade: false};
 
     this.handleAnswerSelection = this.handleAnswerSelection.bind(this);
     this.handleNextRound = this.handleNextRound.bind(this);
@@ -56,22 +51,11 @@ class QuestionPage extends Component {
 
   handleNextRound() {
     this.props.newRound();
-    this.setState({ selectionMade: false, answerIndex: -1, coords: {} });
+    this.setState({ selectionMade: false, answerIndex: -1 });
   }
 
   render() {
     console.log(this.props.categories.quizApp.questionsAndAnswersReversed)
-    const MapWithAMarker = withScriptjs(
-      withGoogleMap(props => (
-        <GoogleMap
-          defaultZoom={3}
-          defaultCenter={this.state.coords}
-          defaultMapTypeId="terrain"
-        >
-          <Marker position={this.state.coords} />
-        </GoogleMap>
-      ))
-    );
 
     return (
       <div>
@@ -129,29 +113,6 @@ class QuestionPage extends Component {
                 ][0][0]}`}
               </h3>
           )}
-        {this.state.selectionMade && (
-          <div className="answer-selected-div">
-            <MapWithAMarker
-              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpMNeYmU0cjRMAcOgeKvTy547npsj4Tj0&v=3.exp&libraries=geometry,drawing,places"
-              loadingElement={<div style={{ height: `70%`, margin: `0 auto` }} />}
-              containerElement={
-                <div className="google-map" style={{margin: `0 auto` }} />
-              }
-              mapElement={
-                <div
-                  style={{ height: `100%` }}
-                  className="google-map-container"
-                />
-              }
-            />
-            <button
-              onClick={this.handleNextRound}
-              className="next-round-button"
-            >
-              {this.props.categories.quizApp.currentRound===10?"Get Your Final Score!":"Next Round"}
-            </button>
-          </div>
-        )}
       </div>
     );
   }
