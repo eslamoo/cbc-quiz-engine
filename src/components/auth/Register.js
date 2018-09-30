@@ -7,6 +7,8 @@ import { notifyUser } from '../../actions/notifyActions';
 import Alert from '../layout/Alert';
 import './login.css';
 import logo from '../../assets/cbclogo.png';
+import { Link } from 'react-router-dom';
+
 class Login extends Component {
   state = {
     email: '',
@@ -61,7 +63,7 @@ password })
                 <label htmlFor='email'>Email</label>
                 <input
                   type='text'
-                  className='form-control'
+                  className='form-control auth'
                   name='email'
                   required
                   value={this.state.email}
@@ -72,7 +74,7 @@ password })
                 <label htmlFor='password'>Password</label>
                 <input
                   type='password'
-                  className='form-control'
+                  className='form-control auth'
                   name='password'
                   required
                   value={this.state.password}
@@ -82,8 +84,11 @@ password })
               <input
                 type='submit'
                 value='Register'
-                className='btn btn-primary btn-block'
+                className='btn btn-primary btn-block auth-submit'
               />
+              <Link to='/login' className='register'>
+                Back to Login
+              </Link>
             </form>
           </div>
         </div>

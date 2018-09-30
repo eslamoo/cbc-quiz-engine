@@ -13,7 +13,7 @@ export default class PickQuiz extends Component {
           </h3>
           <p>What do you need reach your goals? Take the quiz to find out!</p>
           <div className='col-lg-4 offset-md-4'>
-            <NavLink className='pickk' to='/clients/quizzes'>Pick A Quiz Now</NavLink>
+            <NavLink className='pickk' to='/quizzes'>Pick A Quiz Now</NavLink>
           </div>
         </div>
       </div>

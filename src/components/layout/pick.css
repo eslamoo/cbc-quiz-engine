@@ -6,6 +6,11 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .pickk {
@@ -25,7 +30,7 @@ a:hover {
     text-decoration: none
 }
 
-.headline {
+.pick .headline {
     color: #fff;
     font-size: 35px;
     line-height: 40px;

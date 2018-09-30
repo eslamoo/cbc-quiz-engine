@@ -4,13 +4,13 @@ import { startQuiz } from "../actions/index";
 import { bindActionCreators } from "redux";
 
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     categories: state
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return bindActionCreators(
     {
       startQuiz: startQuiz,
@@ -20,16 +20,16 @@ function mapDispatchToProps(dispatch) {
 }
 
 class StartPage extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.handleStartQuiz = this.handleStartQuiz.bind(this);
   }
 
-  handleStartQuiz(type) {
+  handleStartQuiz (type) {
     this.props.startQuiz(type);
   }
 
-  render() {
+  render () {
     return (
       <div>
         <h1>Capital Cities Quiz</h1>
@@ -38,13 +38,13 @@ class StartPage extends Component {
         </h2>
         <button
           onClick={() => this.handleStartQuiz("countries")}
-          className="start-button"
+          className='start-button'
         >
           GUESS THE CITIES!
         </button>
         <button
           onClick={() => this.handleStartQuiz("cities")}
-          className="start-button"
+          className='start-button'
         >
           GUESS THE COUNTRIES!
         </button>

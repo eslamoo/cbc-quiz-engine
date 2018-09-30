@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { UserIsAuthenticated, UserIsNotAuthenticated } from './helpers/auth';
 
 import { Provider } from 'react-redux';
 import store from './store';
 
-import AppNavbar from './components/layout/AppNavbar';
+
 import Dashboard from './components/layout/Dashboard';
-import AddClient from './components/clients/AddClient';
+
 import EditClient from './components/clients/EditClient';
 import ClientDetails from './components/clients/ClientDetails';
 import Login from './components/auth/Login';
@@ -16,6 +16,9 @@ import Settings from './components/settings/Settings';
 import PickQuiz from './components/layout/PickQuiz';
 import './App.css';
 
+import Quizzes from './components/layout/Quizzes';
+import MainQuiz from './components/quiz/MainQuiz';
+
 
 class App extends Component {
   render () {
@@ -23,18 +26,13 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className='App'>
-            <AppNavbar />
-            <div className='container'>
+            
+            <div className='containr'>
               <Switch>
                 <Route
                   exact
                   path='/'
                   component={UserIsAuthenticated(Dashboard)}
-                />
-                <Route
-                  exact
-                  path='/client/add'
-                  component={UserIsAuthenticated(AddClient)}
                 />
                 <Route
                   exact
@@ -65,6 +63,21 @@ class App extends Component {
                   exact
                   path='/pickQuiz'
                   component={UserIsAuthenticated(PickQuiz)}
+                />
+                <Route
+                  exact
+                  path='/createQuiz'
+                  component={UserIsAuthenticated(Dashboard)}
+                />
+                <Route
+                  exact
+                  path='/quizzes'
+                  component={UserIsAuthenticated(Quizzes)}
+                />
+                <Route
+                  exact
+                  path='/quiz'
+                  component={UserIsAuthenticated(MainQuiz)}
                 />
                 
               </Switch>

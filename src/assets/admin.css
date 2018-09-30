@@ -4,8 +4,8 @@
     font-weight: 800
 }
 
-#original{
-    position: relative;
+#original {
+    /* position: relative; */
     z-index: 99999999999999
 }
 
@@ -209,7 +209,7 @@ body.fixed-nav {
         max-width: 300px
     }
     #mainNav.fixed-top .navbar-sidenav {
-        height: calc(100vh - 105px)
+        height: 100vh
     }
     #mainNav.fixed-top .sidenav-toggler {
         position: absolute;
@@ -277,8 +277,14 @@ body.sidenav-toggled #mainNav.fixed-top #sidenavToggler i {
         display: flex
     }
     .content-wrapper {
-        margin-left: 250px
+        margin-left: 255px;
+        margin-top: 65px
     }
+}
+
+.live {
+    background: #ddd;
+    height: 600px
 }
 
 .navbar-sidenav-tooltip.show,
@@ -286,6 +292,126 @@ body.sidenav-toggled .navbar-sidenav .nav-item:after,
 body.sidenav-toggled .navbar-sidenav .nav-link-text,
 body.sidenav-toggled .navbar-sidenav .nav-link:after {
     display: none
+}
+
+.quizzes {
+    margin-left: 250px;
+    margin-top: 82px;
+}
+
+/* Result Component */
+
+.result {
+    padding: 1.5rem 2.5rem;
+}
+
+/* Quiz Component */
+
+.answerOptions {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* QuestionCount Component */
+
+.questionCount {
+    padding: 1.5rem 2.5rem 0;
+    font-size: 14px;
+}
+
+/* Question Component */
+
+.question {
+    margin: 0;
+    padding: 0.5rem 2.5rem 1.5rem 2.5rem;
+}
+
+/* AnswerOption Component */
+
+.answerOption {
+    border-top: 1px solid #eee;
+}
+
+.answerOption:hover {
+    background-color: #eefbfe;
+}
+
+.radioCustomButton {
+    position: absolute;
+    width: auto;
+    opacity: 0;
+}
+
+.radioCustomButton,
+.radioCustomLabel {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.radioCustomLabel {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem 2.5rem 1.5rem 5rem;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.radioCustomButton~.radioCustomLabel:before {
+    position: absolute;
+    top: 20px;
+    left: 38px;
+    width: 28px;
+    height: 28px;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.radioCustomButton:checked~.radioCustomLabel:before {
+    content: '';
+    background: #8BC53F url(./icon-check.svg) no-repeat;
+    background-size: 27px;
+    border-color: #8BC53F;
+}
+
+/* Animation */
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 0.3s;
+}
+
+.fade-leave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-appear {
+    opacity: 0;
+}
+
+.fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 body.sidenav-toggled #mainNav.static-top #sidenavToggler i {

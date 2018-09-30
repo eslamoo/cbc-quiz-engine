@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 export default () => {
   return (
     // <Link to="/client/add" className="btn btn-success btn-block">
@@ -23,10 +23,10 @@ export default () => {
           </li>
      
           <li className='nav-item' data-toggle='tooltip' data-placement='right' title='Questions'>
-            <a className='nav-link' href='#'>
+            <NavLink exact to='/quiz' className='nav-link' href='#'>
               <i className='fa fa-fw fa-calendar-check-o'></i>
-              <span className='nav-link-text'>Questions </span>
-            </a>
+              <span className='nav-link-text'>Quiz Example </span>
+            </NavLink>
           </li>
           <li className='nav-item' data-toggle='tooltip' data-placement='right' title='Pick'>
             <NavLink exact to='/pickQuiz' className='nav-link'>
@@ -35,19 +35,13 @@ export default () => {
             </NavLink>
           </li>
           <li className='nav-item' data-toggle='tooltip' data-placement='right' title='Review & Publish'>
-            <a className='nav-link' href='#'>
+            <NavLink exact to='/pickQuiz' className='nav-link' href='#'>
               <i className='fa fa-fw fa-clone'></i>
               <span className='nav-link-text'>Review & Publish</span>
-            </a>
+            </NavLink>
           </li>
         </ul>
-        <ul className='navbar-nav sidenav-toggler'>
-          <li className='nav-item'>
-            <a className='nav-link text-center' id='sidenavToggler'>
-              <i className='fa fa-fw fa-angle-left'></i>
-            </a>
-          </li>
-        </ul>
+      
         <ul className='navbar-nav ml-auto'>
           <li className='nav-item'>
             <a className='nav-link' data-toggle='modal' data-target='#exampleModal'>

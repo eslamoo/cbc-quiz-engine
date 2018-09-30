@@ -55,25 +55,25 @@ class QuestionPage extends Component {
   }
 
   render() {
-    console.log(this.props.categories.quizApp.questionsAndAnswersReversed)
+    // console.log(this.props.categories.quizApp.questionsAndAnswersReversed)
 
     return (
       <div>
-        <h2 className="topline">Current Score: {this.props.categories.quizApp.userScore}/10</h2>
-        <h2 className="topline">Round {this.props.categories.quizApp.currentRound}</h2>
-        <div className="progress-bar-container">
-          <div className="progress-bar" style={{ width: `${(this.props.categories.quizApp.currentRound*10)-10}%` }}/>
+        <h2 className='topline'>Current Score: {this.props.categories.quizApp.userScore}/10</h2>
+        <h2 className='topline'>Round {this.props.categories.quizApp.currentRound}</h2>
+        <div className='progress-bar-container'>
+          <div className='progress-bar' style={{ width: `${(this.props.categories.quizApp.currentRound*10)-10}%` }}/>
         </div>
         <h2>{!this.props.categories.quizApp.questionsAndAnswersReversed?`
           Which country is
           ${
-            this.props.categories.quizApp.currentRoundQuestions[
-              this.props.categories.quizApp.currentRoundAnswer
-            ][0][1]
-          }
+      this.props.categories.quizApp.currentRoundQuestions[
+        this.props.categories.quizApp.currentRoundAnswer
+      ][0][1]
+      }
           the capital of?`:`What is the capital city of ${this.props.categories.quizApp.currentRoundQuestions[
-              this.props.categories.quizApp.currentRoundAnswer
-            ][0][0]}?`}
+          this.props.categories.quizApp.currentRoundAnswer
+        ][0][0]}?`}
         </h2>
         <h3>Select the answer from the list below:</h3>
         {this.props.categories.quizApp.currentRoundQuestions.map(
@@ -105,14 +105,14 @@ class QuestionPage extends Component {
         {this.state.selectionMade &&
           this.props.categories.quizApp.currentRoundAnswer !==
             this.state.answerIndex && (
-              <h3>
-                {`Incorrect! The correct answer was ${this.props.categories.quizApp.questionsAndAnswersReversed?this.props.categories.quizApp.currentRoundQuestions[
-                  this.props.categories.quizApp.currentRoundAnswer
-                ][0][1]:this.props.categories.quizApp.currentRoundQuestions[
-                  this.props.categories.quizApp.currentRoundAnswer
-                ][0][0]}`}
-              </h3>
-          )}
+          <h3>
+            {`Incorrect! The correct answer was ${this.props.categories.quizApp.questionsAndAnswersReversed?this.props.categories.quizApp.currentRoundQuestions[
+              this.props.categories.quizApp.currentRoundAnswer
+            ][0][1]:this.props.categories.quizApp.currentRoundQuestions[
+              this.props.categories.quizApp.currentRoundAnswer
+            ][0][0]}`}
+          </h3>
+        )}
       </div>
     );
   }

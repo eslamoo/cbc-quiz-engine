@@ -7,6 +7,7 @@ import { notifyUser } from '../../actions/notifyActions';
 import Alert from '../layout/Alert';
 import './login.css';
 import logo from '../../assets/cbclogo.png';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   state = {
@@ -54,7 +55,7 @@ class Login extends Component {
                 <label htmlFor='email'>Email</label>
                 <input
                   type='text'
-                  className='form-control'
+                  className='form-control auth'
                   name='email'
                   required
                   value={this.state.email}
@@ -65,7 +66,7 @@ class Login extends Component {
                 <label htmlFor='password'>Password</label>
                 <input
                   type='password'
-                  className='form-control'
+                  className='form-control auth'
                   name='password'
                   required
                   value={this.state.password}
@@ -75,8 +76,11 @@ class Login extends Component {
               <input
                 type='submit'
                 value='Login'
-                className='btn btn-primary btn-block'
+                className='btn btn-primary btn-block auth-submit'
               />
+              <Link to='/register' className='register'>
+                Or Create your Account now...
+              </Link>
             </form>
           </div>
         </div>
